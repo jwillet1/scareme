@@ -1,6 +1,8 @@
 class StoriesController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
 
   def index
+    @stories = Story.all
   end
 
   def new
@@ -9,6 +11,7 @@ class StoriesController < ApplicationController
 
   def create
     @story = Story.new(story_params)
+    @story.user = current_user
     if @story.save
       redirect_to @story
     else

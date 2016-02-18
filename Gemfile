@@ -12,6 +12,7 @@ gem 'bootstrap-sass', '~> 3.3.5'
 gem 'bootswatch-rails'
 gem 'haml', '~> 4.0', '>= 4.0.7'
 gem 'haml-rails', '~> 0.9.0'
+gem 'acts_as_votable', ~> '0.10.0'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
