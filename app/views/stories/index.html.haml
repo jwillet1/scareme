@@ -1,0 +1,62 @@
+.container
+  %p
+    = link_to "Submit your scary story", new_story_path, class: 'btn btn-primary'
+.container
+  .row
+    .col-md-8
+      .well
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit amet venenatis felis. Proin rutrum sagittis libero. Cras commodo at massa id tempus. Quisque pharetra risus sed leo iaculis condimentum. Mauris lorem magna, dapibus eget sodales vitae, sodales sed tellus. Sed blandit nisi a dolor varius, accumsan convallis lorem convallis. Donec et pharetra enim, viverra ultricies elit. Cras dapibus rutrum nisi nec varius. Praesent viverra tortor elit, nec viverra massa aliquam sit amet. Aliquam vel elementum ante.
+        %br/
+        %br/
+        %a.btn.btn-warning.btn-xs{:href => "#"} That scared me
+        %span.text-warning (28)
+        %a.btn.btn-success.btn-xs{:href => "#"} You wimp!
+        %span.text-success (1200)
+        %a.btn.btn-link.btn-xs{:href => "#"} Comments
+        %small
+          %em (300)
+        %span.text-muted.pull-right Created by: Ramone on 06/30/2015 at 1:30PM
+      %ul.pagination.pull-right
+        %li.disabled
+          %a{:href => "#"} «
+        %li.active
+          %a{:href => "#"} 1
+        %li
+          %a{:href => "#"} 2
+        %li
+          %a{:href => "#"} 3
+        %li
+          %a{:href => "#"} 4
+        %li
+          %a{:href => "#"} 5
+        %li
+          %a{:href => "#"} »
+    .col-md-4
+      .panel.panel-default
+        .panel-heading Categories
+        .panel-body{:style => "padding: 0px;"}
+          .col-md-6{:style => "padding: 0px;"}
+            .table-responsive{:style => "border-left: 0;"}
+              %table.table.table-striped.table-hover.table-bordered{:style => "margin: 0px;"}
+                %thead
+                %tbody
+                  %tr
+                    %td 1
+                  %tr
+                    %td 1
+                  %tr
+                    %td 1
+                  %tr
+                    %td 1
+          .col-md-6{:style => "padding: 0px;"}
+            %table.table.table-striped.table-hover.table-bordered{:style => "margin: 0px;"}
+              %thead
+              %tbody
+                %tr
+                  %td 1
+                %tr
+                  %td 1
+                %tr
+                  %td 1
+                %tr
+                  %td 1

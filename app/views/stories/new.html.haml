@@ -1,0 +1,9 @@
+.container
+  .col-md-8.col-md-offset-2
+    .form-area
+      %h3 Create a story
+      = form_for @story do |f|
+        .form-group
+          = f.label :body, "Tell us your scary story"
+          = f.text_area :body, rows: 10, class: "form-control"
+        = f.submit class: "btn btn-primary"

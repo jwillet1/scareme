@@ -8,6 +8,10 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'devise'
+gem 'bootstrap-sass', '~> 3.3.5'
+gem 'bootswatch-rails'
+gem 'haml', '~> 4.0', '>= 4.0.7'
+gem 'haml-rails', '~> 0.9.0'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
@@ -25,7 +29,7 @@ group :test do
 end
 
 group :production do
-  gem 'pg',             '0.17.1'
+  gem 'pg',             '0.18.4'
   gem 'rails_12factor', '0.0.2'
   gem 'puma',           '2.11.1'
 end
