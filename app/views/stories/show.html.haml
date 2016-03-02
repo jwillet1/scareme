@@ -1,5 +1,32 @@
 .container
   .row
-    %hr
-    .row
-      = @story.body
+    .col-lg-12
+      %hr/
+      .row
+        .col-md-12
+          %p
+            %i.fa.fa-clock-o
+            Posted on #{@story.created_at.strftime('%B %d, %Y at %l:%M %p')}
+            by #{@story.user.name}
+            in category: #{@story.category.name}
+      %hr/
+      %p.lead= @story.body
+      %hr/
+      .well
+        %h4 Leave a Comment:
+        = form_for [@story, Comment.new] do |f|
+          .form-group
+            = f.label :body
+            = f.text_area :body, class: "form-control", rows: 3
+          .form-group
+            = f.submit "Submit", class: "btn btn-primary"
+      %hr/
+      - @comments.each do |comment|
+        .media
+          %a.pull-left{:href => "#"}
+            %img.media-object{:alt => "", :src => "http://placehold.it/64x64"}/
+          .media-body
+            %h4.media-heading
+              = comment.user.name
+              %small= comment.created_at.strftime('%B %d, %Y at %l:%M %p')
+            = comment.body

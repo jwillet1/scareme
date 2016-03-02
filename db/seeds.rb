@@ -6,9 +6,30 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-ghost = Category.create(name: "Ghost")
-witch = Category.create(name: "Witch")
-monster = Category.create(name: "Monster")
-stalker = Category.create(name: "Stalker")
-night = Category.create(name: "Night")
-children = Category.create(name: "Children")
+Category.create(name: "Ghost")
+Category.create(name: "Witch")
+Category.create(name: "Monster")
+Category.create(name: "Stalker")
+Category.create(name: "Night")
+Category.create(name: "Children")
+
+User.create!(name: "Bob Green",
+            email: "bob@example.com",
+            password: "password")
+
+40.times do |n|
+  name = Faker::Name.name
+  email = "example-#{n+1}@example.com"
+  password = "password"
+  User.create!(name: name,
+               email: email,
+               password: password)
+end
+
+30.times do |n|
+  body = Faker::Hipster.paragraph
+  user_id = n + 1
+  Story.create(body: body,
+               user_id: user_id,
+               category_id: rand(1..6))
+end

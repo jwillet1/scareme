@@ -1,46 +1,5 @@
-.container
-  %p
-    = link_to "Submit your scary story", new_story_path, class: 'btn btn-primary'
+= render partial: 'layouts/stories', stories: @stories
 .container
   .row
     .col-md-8
-      - @stories.each do |story|
-        .well
-          = story.body
-          %br/
-          %br/
-          %a.btn.btn-warning.btn-xs{:href => "#"} That scared me
-          %span.text-warning (28)
-          %a.btn.btn-success.btn-xs{:href => "#"} You wimp!
-          %span.text-success (1200)
-          %a.btn.btn-link.btn-xs{:href => "#"} Comments
-          %small
-            %em (300)
-          %span.text-muted.pull-right
-            %small
-              Created by:
-              = story.user.name
-              on
-              = story.created_at.strftime('%B %d, %Y at %l:%M %p')
-      %ul.pagination.pull-right
-        %li.disabled
-          %a{:href => "#"} «
-        %li.active
-          %a{:href => "#"} 1
-        %li
-          %a{:href => "#"} 2
-        %li
-          %a{:href => "#"} 3
-        %li
-          %a{:href => "#"} 4
-        %li
-          %a{:href => "#"} 5
-        %li
-          %a{:href => "#"} »
-    .col-md-4.col-sm-12
-      .panel.panel-default
-        .panel-heading.text-center Categories
-        %ul.list-group
-          - Category.all.each do |category|
-            %li.list-group-item
-              = category.name
+      = paginate @stories

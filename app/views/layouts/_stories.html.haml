@@ -1,0 +1,43 @@
+// .container
+//   %p
+//     = link_to "Submit your scary story", new_story_path, class: 'btn btn-default'
+.container
+  .row
+    .col-md-8
+      - @stories.each do |story|
+        .well
+          = story.body
+          %br/
+          %br/
+          = link_to "That scared me", like_story_path(story), method: :put, class: "btn btn-warning btn-xs"
+          %span.text-warning
+            (
+            = story.get_likes.size
+            )
+          = link_to "You wimp", dislike_story_path(story), method: :put, class: "btn btn-success btn-xs"
+          %span.text-success
+            (
+            = story.get_dislikes.size
+            )
+          = link_to "Comments", story_path(story), class: "btn btn-link btn-xs"
+          %small
+            %em
+              = story.comments.count
+          %span.text-muted.pull-right
+            %small
+              Created by:
+              = story.user.name
+              on
+              = story.created_at.strftime('%B %d, %Y at %l:%M %p')
+          %br
+          %span.text-muted.pull-right
+            %small
+              Category:
+              = story.category.name
+    .col-md-4.col-sm-12
+      .panel.panel-default
+        .panel-heading.text-center Categories
+        %ul.list-group
+          - Category.all.each do |category|
+            %li.list-group-item
+              = link_to category.name, category_path(category)
